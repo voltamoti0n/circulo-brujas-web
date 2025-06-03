@@ -1,13 +1,18 @@
 /* src/pages/Home/Home.module.css */
 .homeContainer {
-  min-height: 100vh;
-  color: #ffffff;
-  padding: 20px;
-  display: flex;
+  min-height: 0; 
+  flex-grow: 1; 
+  display: flex; 
   flex-direction: column;
-  overflow: hidden; 
+  color: #ffffff;
   position: relative; 
   width: 100%; 
+  background-image: url('/assets/images/backgrounds/fondo-inicio2.png');
+  background-size: 125% auto; 
+  background-position: center center; 
+  background-repeat: no-repeat;
+  padding-top: 75px; 
+  box-sizing: border-box; 
 }
 
 .homeContainer::before {
@@ -17,80 +22,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/images/backgrounds/fondo.jpg');
-  background-size: 120% auto; 
-  /* Ajuste para la posición del fondo (Punto 1 y 2) */
-  /* Mueve la imagen de fondo más hacia la derecha para que el contenido izquierdo de la imagen (fuego) se alinee con el logo. */
-  /* Prueba valores como 15%, 20%, 25% hasta que quede bien. */
-  background-position: 20% center; 
-  opacity: 0.6; 
+  background-color: rgba(20, 17, 49, 0.35); 
   z-index: -1; 
-}
-
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10; 
-}
-
-.headerLeft {
-  display: flex;
-  align-items: center;
-}
-
-.header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 25px;
-  align-items: center; 
-}
-
-.header nav a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  font-size: 1rem;
-}
-
-.header nav a:hover {
-  color: #facc15; 
-}
-
-.header nav button { 
-  background-color: #d0006e; 
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px; 
-  border-radius: 0px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  font-size: 1rem;
-  font-weight: 600; 
-  white-space: nowrap;
-}
-
-.header nav button:hover {
-  background-color: #e6007a; 
+  pointer-events: none; 
 }
 
 .main {
-  flex-grow: 1;
+  flex-grow: 1; 
   display: flex;
   align-items: center; 
   justify-content: space-between; 
-  padding: 40px 0; 
+  padding: 10px 20px 0; 
   z-index: 1; 
   width: 100%; 
   max-width: 1320px; 
   margin: 0 auto; 
+  box-sizing: border-box;
 }
 
 .mainLeft {
@@ -98,17 +45,9 @@
   flex-direction: column;
   align-items: flex-start; 
   text-align: left;
-  flex-basis: 33%; 
-  padding-right: 40px; 
-  padding-left: 20px; 
-}
-
-.main h2 { 
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: #ffffff;
+  flex-basis: 30%; 
+  padding-right: 15px; 
+  align-self: center; 
 }
 
 .mainText { 
@@ -120,62 +59,61 @@
 
 .carouselWrapper {
   position: relative;
-  flex-basis: 67%; 
-  max-width: 850px; 
-  height: 500px; /* Aumentado ligeramente para dar más espacio vertical */
+  flex-basis: 70%; 
+  /* Altura para acomodar la nueva altura de la carta (416px) + escala (1.05*416 = ~437px) + espacio */
+  height: 570px; /* Aumentada para la nueva altura de carta */
   display: flex;
   justify-content: center;
-  align-items: center;
-  perspective: 1000px; /* Perspectiva ligeramente reducida para acentuar el efecto 3D con radio menor */
-  /* overflow: hidden; */ /* Descomentar si es estrictamente necesario para cortar cartas, pero puede interferir con el efecto 3D deseado */
+  align-items: center; 
+  perspective: 4000px; 
+  overflow: visible; 
 }
 
 .carousel {
   position: relative;
-  width: 100%;
+  width: 100%; 
   height: 100%; 
   transform-style: preserve-3d; 
+  overflow: visible; 
 }
 
 .cardContainer {
   position: absolute;
   width: 250px; 
-  height: 375px; 
-  /* Ajuste para el recorte superior (Punto 4) */
-  /* Bajamos un poco el punto de anclaje vertical de las cartas */
-  top: 53%; /* Antes 50% */
-  left: 50%;
+  /* Nueva altura basada en la proporción de las imágenes */
+  height: 416px; 
+  top: 50%; 
+  left: 50%; 
   will-change: transform, opacity, filter; 
-  transform-style: preserve-3d; /* Asegurar preserve-3d aquí también */
+  transform-style: preserve-3d;
+  cursor: default;
+  overflow: visible; 
+}
+
+.activeCardContainer {
+  cursor: pointer !important;
 }
 
 .navigation {
   position: absolute;
-  /* Ajustar la posición de los botones si es necesario con la nueva altura del carouselWrapper */
-  bottom: 10px; /* Subido un poco porque aumentamos la altura del wrapper */
+  bottom: 10px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
-  z-index: 20; 
-  margin-top: 20px; 
+  gap: 25px; 
+  z-index: 2000; 
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 8px 15px; 
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem; 
   color: #d1d5db;
   z-index: 5; 
-}
-
-.cbLogo { 
-  height: 40px;
-  margin-right: 10px;
+  position: relative; 
+  background-color: rgba(0,0,0,0.1); 
+  flex-shrink: 0; 
 }
 
 .circuloBrujasLogo { 

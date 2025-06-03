@@ -1,13 +1,21 @@
+// src/components/ArrowButton/ArrowButton.jsx
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import styles from './ArrowButton.module.css'; // Puedes crear este archivo CSS Module
+import PropTypes from 'prop-types';
+import styles from './ArrowButton.module.css';
 
 const ArrowButton = ({ direction, onClick }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
-      {direction === 'left' ? <ChevronLeft size={32} strokeWidth={3} /> : <ChevronRight size={32} strokeWidth={3} />}
-    </button>
+    <button
+      className={`${styles.arrowButton} ${direction === 'left' ? styles.left : styles.right}`}
+      onClick={onClick}
+      aria-label={direction === 'left' ? 'Previous Card' : 'Next Card'}
+    />
   );
+};
+
+ArrowButton.propTypes = {
+  direction: PropTypes.oneOf(['left', 'right']).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ArrowButton;

@@ -1,0 +1,21 @@
+/* src/components/Preloader/Preloader.module.css */
+.preloaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Punto 1: Fondo negro para la carga */
+  background-color: #000000; 
+  z-index: 9999; 
+}
+
+.preloaderVideo {
+  /* Punto 1: Hacer la animación más grande si se desea */
+  width: 250px; /* Ajusta el tamaño de tu animación */
+  height: 250px; /* Ajusta el tamaño de tu animación */
+  object-fit: contain;
+}

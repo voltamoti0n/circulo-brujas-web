@@ -1,0 +1,76 @@
+/* src/pages/HechizosParaConocerPage/HechizosParaConocerPage.module.css */
+.pageContainer {
+  min-height: 100%; 
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Para que el texto pueda ir debajo del área del librero */
+  align-items: center; 
+  justify-content: center; /* Centrar el librero y luego el texto */
+  position: relative;
+  background-image: url('/assets/images/backgrounds/fondo-hechizos.jpg'); 
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: background-position 0.1s linear; /* Para el parallax si está activo */
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contentWrapper {
+  /* Este wrapper es para el área del librero donde van las pociones */
+  position: relative;
+  width: 60%; /* O el ancho que ocupe el librero en tu imagen de fondo */
+  max-width: 700px;
+  aspect-ratio: 4/3; /* O la proporción de tu librero, ajusta */
+  /* border: 1px dashed hotpink; */ /* Para visualizar */
+  margin-bottom: 20px; /* Espacio antes del texto de abajo */
+}
+
+.shelfArea { /* El área dentro de contentWrapper donde se posicionan las pociones */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border: 1px dashed gold; */ /* Para visualizar */
+}
+
+.potionImage {
+  position: absolute;
+  width: 60px; /* Tamaño base de las pociones, puedes ajustar por clase */
+  height: auto;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+}
+
+/* --- Clases de Posicionamiento para las Pociones --- */
+/* ESTOS SON LOS VALORES QUE TÚ YA HABÍAS AJUSTADO Y FUNCIONABAN. */
+/* VERIFICA QUE SEAN LOS CORRECTOS. Los siguientes son ejemplos. */
+.potionPos1 { top: 43%; left: 39%; width: 50px; }
+.potionPos2 { top: 65%; left: 39%; width: 39px; transform: rotate(-5deg); }
+.potionPos3 { top: 67%; left: 51%; width: 52px; /* Asegúrate de que 'right' funcione o usa 'left' */ }
+.potionPos4 { top: 67%; left: 63%; width: 40px; transform: rotate(3deg); /* Asegúrate de que 'bottom' funcione o usa 'top' */ }
+.potionPos5 { top: 69%; left: 73%; width: 50px; }
+.potionPos6 { top: 98%; left: 67%; width: 36px; }
+
+
+.textBelowLogoArea {
+  text-align: center; 
+  color: white;
+  /* Ajusta este margen para que el texto quede bien debajo del área del logo en tu fondo */
+  margin-top: 1%; /* Puede necesitar ser 0 o incluso un valor negativo si el .contentWrapper tiene mucho margen inferior */
+  z-index: 1;
+}
+
+.textLine1, .textLine2 {
+  font-size: 1.1rem; /* Reducido un poco */
+  line-height: 1.5;
+  margin-bottom: 5px;
+  color: #e0e7ff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.textLine1 {
+  font-weight: bold;
+}

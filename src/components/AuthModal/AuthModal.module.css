@@ -1,0 +1,180 @@
+/* src/components/AuthModal/AuthModal.module.css */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 7, 30, 0.85); /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000; /* Muy alto para estar sobre todo */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  background-image: url('/assets/images/backgrounds/fondo3.jpg'); /* Mismo fondo general */
+  background-size: cover; /* Cubrir el área del modal */
+  background-position: center 30%; /* Ajustar para que se vea una parte interesante del fondo */
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  position: relative;
+  width: 100%;
+  max-width: 550px; /* Ancho del modal */
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modalContent::before { /* Overlay interno para oscurecer el fondo del modal y mejorar contraste */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 17, 49, 0.78); /* Ajusta opacidad */
+  z-index: 0; 
+  border-radius: inherit; /* Heredar el border-radius */
+  pointer-events: none; 
+}
+
+
+.closeButtonIcon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #b0aec7;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  z-index: 2;
+}
+.closeButtonIcon:hover {
+  color: white;
+}
+
+.logoHeaderArea {
+  text-align: center;
+  margin-bottom: 25px; 
+  z-index: 1;
+}
+
+.mainLogo {
+  width: 220px; 
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 5px;
+}
+.mainLogoConfirm { /* Para el logo en el mensaje de confirmación */
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 0.8rem; 
+  color: #c0bccc;
+  letter-spacing: 0.4px;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; 
+  width: 100%;
+  max-width: 400px; 
+  z-index: 1;
+  margin-bottom: 25px; /* Espacio antes de las redes sociales */
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.formLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fbc2eb; /* Rosa pálido para etiquetas */
+  flex-basis: 25%; 
+  text-align: right;
+  padding-right: 5px;
+}
+
+.formInput {
+  flex-grow: 1; 
+  padding: 10px 12px;
+  border: 1px solid #52437b; 
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.95); 
+  color: #1f2937; 
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formInput::placeholder {
+  color: #a1a1aa;
+}
+
+.formInput:focus {
+  border-color: #e879f9; /* Rosa más brillante al enfocar */
+  box-shadow: 0 0 0 3px rgba(232, 121, 249, 0.25);
+}
+
+.submitButton {
+  padding: 11px 28px;
+  background-color: #d0006e; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 10px; 
+}
+
+.submitButton:hover {
+  background-color: #e6007a;
+  transform: translateY(-2px);
+}
+
+.socialLinksFooter {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding-top: 20px; 
+  width: 100%;
+  font-size: 0.8rem;
+  color: #b0aec7;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.1); 
+}
+
+.confirmationMessage {
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+.confirmationMessage p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e0d9ff;
+}

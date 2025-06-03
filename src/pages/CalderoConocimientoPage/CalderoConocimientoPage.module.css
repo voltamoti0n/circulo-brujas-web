@@ -1,0 +1,221 @@
+/* src/pages/CalderoConocimientoPage/CalderoConocimientoPage.module.css */
+.pageContainer {
+  min-height: 0; 
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('/assets/images/backgrounds/fondo3.jpg'); 
+  background-size: 125% auto; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow-y: auto; 
+  padding: 40px; 
+  padding-top: 90px; 
+  box-sizing: border-box;
+  color: white;
+}
+.pageContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 17, 49, 0.55); 
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+.mainContentGrid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr; 
+  gap: 40px; 
+  width: 100%;
+  max-width: 1250px; 
+  margin: auto; 
+  z-index: 1; 
+  align-items: flex-start; 
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start; 
+  padding-top: 30px; 
+  position: sticky; 
+  top: 100px; 
+}
+
+.sectionLogo { 
+  width: 280px; 
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px; 
+}
+
+.discoverText { 
+  font-size: 1.3rem; 
+  font-weight: 500; 
+  line-height: 1.5;
+  color: #e0e7ff; 
+  max-width: 280px; 
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* Aumentar un poco el espacio entre videos si no tienen fondo */
+}
+
+/* Punto 1: Quitar recuadro de los videos */
+.videoItem {
+  /* background-color: rgba(10, 5, 25, 0.5); */ /* Eliminado o transparente */
+  background-color: transparent;
+  /* border-radius: 8px; */ /* Eliminado si no hay fondo */
+  /* padding: 15px; */ /* Eliminado, el espaciado se manejará con gap en .videoInfo y .thumbnailContainer */
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out; /* Quitar box-shadow y background-color de la transición */
+  /* border: 1px solid rgba(255,255,255,0.08); */ /* Eliminado o hacerlo muy sutil si se prefiere */
+  padding: 10px 0; /* Añadir un poco de padding vertical para separar visualmente */
+}
+
+.videoItem:hover {
+  transform: translateY(-4px) scale(1.005);
+  /* box-shadow: 0 6px 15px rgba(0,0,0,0.25); */ /* Eliminado */
+  /* background-color: rgba(20, 12, 50, 0.6); */ /* Eliminado */
+}
+/* Si se quiere una línea separadora sutil entre videos */
+.videoItem:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 25px; /* Espacio después de la línea */
+}
+
+
+.thumbnailContainer {
+  flex-shrink: 0;
+  width: 200px; 
+  height: 112px; 
+  position: relative;
+  border-radius: 6px; /* Mantener redondeo para el thumbnail */
+  overflow: hidden;
+  background-color: #111; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Añadir sombra al thumbnail directamente */
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.videoItem:hover .thumbnail {
+  transform: scale(1.05);
+}
+
+.durationBadge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  padding: 3px 7px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.playIconWrapper { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 6px; /* Para que el overlay coincida con el thumbnail */
+}
+.videoItem:hover .playIconWrapper {
+  opacity: 1;
+}
+.playIcon { 
+  width: 0; 
+  height: 0; 
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 25px solid rgba(255,255,255,0.9);
+  transition: transform 0.2s ease;
+}
+.videoItem:hover .playIcon {
+  transform: scale(1.1);
+}
+
+
+.videoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; 
+  flex-grow: 1; 
+}
+
+.videoTitle {
+  font-size: 1.1rem; /* Ligeramente más grande para destacar */
+  font-weight: 600;
+  color: #f3d6ff; 
+  margin: 0;
+  text-decoration: underline; 
+  text-decoration-color: #a855f7; 
+  text-underline-offset: 4px; 
+  line-height: 1.3;
+}
+.videoTitle:hover {
+  color: #fff; /* Cambio de color al pasar el mouse sobre el título */
+}
+
+.videoDescription {
+  font-size: 0.85rem; /* Un poco más grande para legibilidad */
+  color: #c0c6d6; 
+  line-height: 1.55; /* Mayor interlineado */
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para el Modal (sin cambios respecto a la anterior) */
+.modalOverlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.88); display: flex;
+  justify-content: center; align-items: center; z-index: 2000; 
+  padding: 20px; box-sizing: border-box;
+}
+.modalContent {
+  background-color: #100c24; padding: 15px; padding-top: 40px; 
+  border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative; width: 90%; max-width: 860px; 
+}
+.closeButton {
+  position: absolute; top: 8px; right: 10px; background: none;
+  border: none; color: #9ca3af; font-size: 1.8rem; 
+  font-weight: bold; cursor: pointer; line-height: 1;
+}
+.closeButton:hover { color: white; }
+.videoWrapper {
+  position: relative; padding-bottom: 56.25%; height: 0;
+  overflow: hidden; border-radius: 4px; 
+}
+.videoWrapper iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+}

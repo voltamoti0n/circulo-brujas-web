@@ -1,0 +1,86 @@
+/* src/pages/OjoDeLocaPage/OjoDeLocaPage.module.css */
+.pageContainer {
+  min-height: 0; /* Permitir que flex-grow determine la altura */
+  flex-grow: 1; /* Crece para llenar el espacio en .pageContent del Layout */
+  width: 100%;
+  display: flex; 
+  align-items: center; /* Centrar .interactiveButtonsArea verticalmente si es más pequeño */
+  justify-content: center; /* Centrar .interactiveButtonsArea horizontalmente */
+  position: relative;
+  background-image: url('/assets/images/backgrounds/fondo-ojo.jpg');
+  
+  /* Punto 1: Ajuste de fondo */
+  background-size: cover; /* Usar cover es lo más común para fondos de página completa */
+  /* Si cover hace que se vea muy "zoomeado", la imagen de fondo podría necesitar un re-encuadre */
+  /* o podrías probar con porcentajes, pero cover es más robusto para diferentes pantallas */
+  background-position: center center; 
+  background-repeat: no-repeat;
+  
+  overflow: hidden; /* Evitar barras de scroll si algo se desborda un poco */
+  box-sizing: border-box;
+}
+
+/* interactiveButtonsArea es el lienzo donde se posicionarán los botones */
+/* Debe tener dimensiones relativas a cómo se muestra el árbol en el fondo */
+.interactiveButtonsArea {
+  position: relative; /* Contenedor relativo para los botones absolutos */
+  width: 70%;  /* Ajusta este ancho para que coincida con el área del árbol en tu fondo */
+  max-width: 900px; /* Un máximo para pantallas muy grandes */
+  aspect-ratio: 16 / 9; /* O la proporción que mejor encaje con tu árbol, prueba y error */
+  /* border: 1px dashed white; */ /* Para visualizar el área de los botones */
+  /* Centrar este contenedor si es necesario, aunque el flex del pageContainer debería hacerlo */
+}
+
+.ojoButton {
+  position: absolute; 
+  background-color: #3730a3; 
+  color: white;
+  border: none;
+  padding: 6px 12px; /* Un poco más de padding */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem; 
+  white-space: nowrap;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  min-width: 85px; 
+  text-align: center;
+  pointer-events: all; 
+  transform: translate(-50%, -50%); /* Centrar el botón en su coordenada top/left */
+}
+
+.ojoButton:hover {
+  background-color: #4f46e5; 
+  transform: translate(-50%, -50%) scale(1.05) translateY(-1px); /* Mantener centrado al escalar */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* --- Punto 1 (Botones): Clases de Posicionamiento Específico para cada BOTÓN --- */
+/* AJUSTA ESTOS VALORES DE TOP/LEFT con el inspector del navegador */
+/* Los % son relativos al .interactiveButtonsArea */
+/* La idea es que (0,0) es la esquina superior izquierda del .interactiveButtonsArea */
+
+.posBtnFlores { 
+  top: 69%;  /* % desde la parte superior del área del árbol */
+  left: 30%;  /* % desde la izquierda del área del árbol */
+} 
+
+.posBtnTamara { 
+  top: 59%; 
+  left: 58%; 
+} 
+
+.posBtnNancy { 
+  top: 101%; 
+  left: 88%; 
+} 
+
+.posBtnAlcatraces { 
+  top: 116%; /* Usando top en lugar de bottom para consistencia */
+  left: 37%; 
+}   
+
+.posBtnNegra { 
+  top: 116%; 
+  left: 106%; 
+} 

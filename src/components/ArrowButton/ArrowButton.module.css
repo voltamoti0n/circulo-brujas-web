@@ -1,20 +1,43 @@
 /* src/components/ArrowButton/ArrowButton.module.css */
-.button {
-  background-color: #ffffff;
-  color: #9c27b0;
+.arrowButton {
+  background-color: white; 
+  border-radius: 50%;     
   border: none;
-  border-radius: 50%; /* Hace el botón circular */
-  width: 40px; /* Ajusta el ancho del botón */
-  height: 40px; /* Ajusta la altura del botón */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  padding: 0; /* Elimina el padding para centrar el icono */
-  outline: none; /* Elimina el borde al hacer foco */
+  width: 45px; 
+  height: 45px;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
 }
 
-.button:hover {
-  background-color: #ab47bc;
+.arrowButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.arrowButton::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  top: 50%;
+  left: 50%;
+}
+
+.arrowButton.left::before {
+  border-width: 9px 13px 9px 0; 
+  border-color: transparent #6d28d9 transparent transparent; 
+  transform: translate(-60%, -50%); 
+}
+
+.arrowButton.right::before {
+  border-width: 9px 0 9px 13px; 
+  border-color: transparent transparent transparent #6d28d9; 
+  transform: translate(-40%, -50%); 
 }

@@ -1,29 +1,32 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0; /* Reset de margen global */
+  padding: 0; /* Reset de padding global */
 }
 
-html, body {
-  height: 100%; /* Asegurar que html y body ocupen toda la altura */
+html {
+  height: 100%;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #1e1b4b; /* Color de fondo general si es necesario fuera de #root */
+  /* margin: 0; Ya está en * */
+  /* padding: 0; Ya está en * */
+  background-color: #110f31; /* Un fondo base oscuro si algo se sale del #root */
   color: white;
-  min-height: 100vh; /* Mínima altura del viewport */
-  overflow-x: hidden; /* Prevenir scroll horizontal innecesario */
+  min-height: 100%; /* Asegurar que body ocupe al menos la altura del viewport */
+  line-height: 1.5; /* Un line-height base */
+  overflow-x: hidden; 
 }
 
 #root {
-  min-height: 100vh; /* #root también ocupa al menos toda la altura del viewport */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  width: 100%; /* Asegurar que #root ocupe todo el ancho */
+  width: 100%;
 }

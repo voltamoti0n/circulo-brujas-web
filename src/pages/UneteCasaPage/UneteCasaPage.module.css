@@ -1,0 +1,179 @@
+/* src/pages/UneteCasaPage/UneteCasaPage.module.css */
+.pageContainer {
+  min-height: 0; 
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  position: relative;
+  background-image: url('/assets/images/backgrounds/fondo3.jpg'); 
+  background-size: 125% auto; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  padding: 20px; 
+  padding-top: 85px; 
+  box-sizing: border-box;
+  color: white;
+}
+.pageContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 17, 49, 0.65); 
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+.logoHeaderArea {
+  text-align: center;
+  margin-bottom: 35px; /* Un poco más de espacio */
+  z-index: 1;
+  margin-top: 15px; 
+}
+
+.mainLogo {
+  width: 280px; 
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 3px;
+}
+
+.tagline {
+  font-size: 0.85rem; 
+  color: #d1d5db;
+  letter-spacing: 0.5px;
+}
+
+.quizLayout {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr; /* Dar más espacio a la columna de preguntas */
+  gap: 30px 50px; 
+  width: 100%;
+  max-width: 950px; /* Aumentar un poco el ancho máximo del quiz si es necesario */
+  z-index: 1;
+  align-items: flex-start; /* Alinear columnas desde arriba */
+}
+
+.scoreColumn {
+  color: #e0e7ff;
+  padding-right: 15px; 
+  padding-top: 5px; /* Para alinear mejor con el texto de la primera pregunta */
+}
+
+.scoreTitle {
+  font-size: 1.4rem; 
+  font-weight: 600;
+  color: #facc15; 
+  margin-bottom: 18px;
+}
+
+.scoreList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scoreList li {
+  font-size: 0.95rem; 
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.scoreList li strong {
+  font-weight: 700;
+  color: #fde047; 
+}
+
+.questionsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Espacio vertical entre cada pregunta completa */
+  overflow: hidden; 
+}
+
+/* Punto 1: Acomodo de pregunta y opciones */
+.questionItem {
+  display: flex; /* Convertir en contenedor flex */
+  justify-content: space-between; /* Texto a la izq, opciones a la der */
+  align-items: center; /* Centrar verticalmente texto y opciones */
+  /* border-bottom: 1px solid rgba(255,255,255,0.1); */ /* Opcional: separador */
+  padding-bottom: 10px; /* Espacio si hay separador */
+  margin-bottom: 10px; /* Espacio adicional entre items de pregunta */
+}
+
+.questionText {
+  font-size: 0.9rem; /* Reducir un poco el texto de la pregunta */
+  color: #e0e7ff;
+  line-height: 1.4;
+  margin-right: 20px; /* Espacio entre el texto y las opciones */
+  flex-grow: 1; /* Permitir que el texto ocupe el espacio disponible a la izquierda */
+  /* max-width: 60%; */ /* Opcional: Limitar el ancho del texto de la pregunta */
+}
+
+.optionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reducir aún más el espacio entre opciones si es necesario */
+  flex-shrink: 0; /* Evitar que el contenedor de opciones se encoja */
+  /* flex-wrap: wrap; */ /* Mantener por si acaso, aunque ahora deberían caber */
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+  font-size: 0.9rem; 
+  color: #c7d2fe;
+  cursor: pointer;
+  padding: 3px; /* Reducir padding del label */
+  white-space: nowrap; 
+}
+
+.radioInput {
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.radioCustom {
+  display: inline-block;
+  width: 15px; /* Círculos un poco más pequeños */
+  height: 15px;
+  border: 1.5px solid #a78bfa; /* Borde un poco más delgado */
+  border-radius: 50%;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.radioInput:checked + .radioCustom {
+  background-color: #8b5cf6; 
+  border-color: #7c3aed;
+}
+
+.radioInput:checked + .radioCustom::after { 
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px; 
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.radioInput:focus + .radioCustom {
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.4); 
+}
+
+.optionValueText { 
+  font-size: 0.8rem; 
+  color: #d1d5db; 
+  margin-left: 1px; /* Ajustar si es necesario */
+}

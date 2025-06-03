@@ -1,0 +1,89 @@
+/* src/pages/GrimorioPage/GrimorioPage.module.css */
+.pageContainer {
+  min-height: 100%; 
+  flex-grow: 1;
+  width: 100%;
+  display: flex; /* Necesario para que align-items y justify-content en el padre funcionen si esto fuera un hijo directo */
+  align-items: center; /* Centrar el .leftPageContent si es más pequeño que el contenedor */
+  justify-content: center; /* Centrar el .leftPageContent si es más pequeño que el contenedor */
+  position: relative; /* Para el posicionamiento absoluto de .leftPageContent */
+  
+  background-image: url('/assets/images/backgrounds/fondo-grimorio.jpg'); 
+  background-size: cover; /* Vuelve a cover para llenar toda la pantalla */
+  background-position: center center; /* Centra la imagen. Puedes ajustar esto (e.g., center 60%) */
+  background-repeat: no-repeat;
+  
+  overflow: hidden; /* Evita barras de scroll si .leftPageContent se desborda un poco durante el ajuste */
+  /* padding: 20px; */ /* Comentado para que el fondo llegue a los bordes */
+  box-sizing: border-box;
+}
+
+/* Contenedor para el contenido de la página izquierda del libro */
+.leftPageContent {
+  position: absolute; 
+  /* --- ESTOS SON LOS VALORES CRÍTICOS A AJUSTAR --- */
+  /* Ahora son relativos al .pageContainer, que es la pantalla completa. */
+  /* Debes encontrar los porcentajes que alinean este div con la página izquierda del libro */
+  /* tal como se ve cuando el fondo tiene 'background-size: cover'. */
+  
+  /* ANCHO: Estima qué porcentaje del ancho TOTAL de la pantalla ocupa la página izquierda del libro */
+  width: 28%;  /* Ejemplo, AJUSTA */
+  /* ALTO: Estima qué porcentaje del alto TOTAL de la pantalla ocupa la página izquierda del libro */
+  height: 83%; /* Ejemplo, AJUSTA */
+  
+  /* POSICIÓN: Distancia desde la esquina superior izquierda de la PANTALLA */
+  /* hasta la esquina superior izquierda del ÁREA donde quieres el .leftPageContent */
+  top: 23%;    /* Ejemplo, AJUSTA */
+  left: 20%;   /* Ejemplo, AJUSTA */
+  /* transform: translate(-50%, -50%); */ /* Quitado temporalmente para posicionar desde la esquina superior izquierda */
+                                      /* Puedes volver a usarlo si prefieres posicionar desde el centro del div. */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrar la cuadrícula de iconos verticalmente */
+  padding: 40px 15px; /* Padding fijo para el contenido interno */
+  box-sizing: border-box;
+  text-align: center;
+  /* border: 1px dashed hotpink; */ /* Descomenta para visualizar el área al ajustar */
+}
+
+.interactiveGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 25px 20px; /* Aumentar un poco el gap para más aire */
+  width: 100%;  
+  max-width: 270px; /* Limitar el ancho de la cuadrícula */
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px; 
+}
+
+.itemIcon {
+  width: 45px; 
+  height: 45px;
+  object-fit: contain;
+}
+
+.itemButton {
+  background-color: #581c87; 
+  color: white;
+  border: none;
+  padding: 7px 12px; 
+  border-radius: 3px;
+  font-size: 0.75rem; /* Un poco más grande si hay espacio */
+  min-width: 90px; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  cursor: pointer; 
+  transition: background-color 0.2s, transform 0.1s;
+  text-align: center;
+}
+
+.itemButton:hover {
+  background-color: #4c1d95; 
+  transform: translateY(-1px);
+}

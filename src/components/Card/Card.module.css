@@ -1,0 +1,38 @@
+/* src/components/Card/Card.module.css */
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* Bordes redondeados para las cartas */
+  overflow: hidden; /* Muy importante para que la imagen no se salga */
+  position: relative; /* Para posicionar el overlay del título */
+  background-color: #2c2858; /* Un color de fondo mientras carga la imagen */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5); /* Sombra más pronunciada para efecto 3D */
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Clave: Escala la imagen para llenar el contenedor, recortando si es necesario.
+                        Alternativa: 'contain' para ver toda la imagen (puede dejar espacios). */
+  display: block; /* Elimina espacio extra debajo de la imagen si es inline */
+}
+
+.titleOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0) 100%);
+  padding: 25px 15px 15px 15px; /* Espacio para el texto, más arriba para que se vea bien con el gradiente */
+  box-sizing: border-box;
+}
+
+.cardTitle {
+  color: #ffffff;
+  font-size: 0.95rem; /* Tamaño del título en la carta, ajusta según el nuevo tamaño de carta */
+  font-weight: 700; /* Poppins Bold */
+  text-align: center;
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Sombra para legibilidad */
+}

@@ -1,0 +1,29 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Asegurar que html y body ocupen toda la altura */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1b4b; /* Color de fondo general si es necesario fuera de #root */
+  color: white;
+  min-height: 100vh; /* Mínima altura del viewport */
+  overflow-x: hidden; /* Prevenir scroll horizontal innecesario */
+}
+
+#root {
+  min-height: 100vh; /* #root también ocupa al menos toda la altura del viewport */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Asegurar que #root ocupe todo el ancho */
+}

@@ -1,0 +1,186 @@
+/* src/pages/Home/Home.module.css */
+.homeContainer {
+  min-height: 100vh;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+  position: relative; 
+  width: 100%; 
+}
+
+.homeContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/backgrounds/fondo.jpg');
+  background-size: 120% auto; 
+  /* Ajuste para la posición del fondo (Punto 1 y 2) */
+  /* Mueve la imagen de fondo más hacia la derecha para que el contenido izquierdo de la imagen (fuego) se alinee con el logo. */
+  /* Prueba valores como 15%, 20%, 25% hasta que quede bien. */
+  background-position: 20% center; 
+  opacity: 0.6; 
+  z-index: -1; 
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; 
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px;
+  align-items: center; 
+}
+
+.header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+.header nav a:hover {
+  color: #facc15; 
+}
+
+.header nav button { 
+  background-color: #d0006e; 
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 0px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+  font-weight: 600; 
+  white-space: nowrap;
+}
+
+.header nav button:hover {
+  background-color: #e6007a; 
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 40px 0; 
+  z-index: 1; 
+  width: 100%; 
+  max-width: 1320px; 
+  margin: 0 auto; 
+}
+
+.mainLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
+  flex-basis: 33%; 
+  padding-right: 40px; 
+  padding-left: 20px; 
+}
+
+.main h2 { 
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.mainText { 
+  font-size: 1.1rem; 
+  color: #f0f0f0; 
+  margin-top: 10px; 
+  line-height: 1.5;
+}
+
+.carouselWrapper {
+  position: relative;
+  flex-basis: 67%; 
+  max-width: 850px; 
+  height: 500px; /* Aumentado ligeramente para dar más espacio vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* Perspectiva ligeramente reducida para acentuar el efecto 3D con radio menor */
+  /* overflow: hidden; */ /* Descomentar si es estrictamente necesario para cortar cartas, pero puede interferir con el efecto 3D deseado */
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  transform-style: preserve-3d; 
+}
+
+.cardContainer {
+  position: absolute;
+  width: 250px; 
+  height: 375px; 
+  /* Ajuste para el recorte superior (Punto 4) */
+  /* Bajamos un poco el punto de anclaje vertical de las cartas */
+  top: 53%; /* Antes 50% */
+  left: 50%;
+  will-change: transform, opacity, filter; 
+  transform-style: preserve-3d; /* Asegurar preserve-3d aquí también */
+}
+
+.navigation {
+  position: absolute;
+  /* Ajustar la posición de los botones si es necesario con la nueva altura del carouselWrapper */
+  bottom: 10px; /* Subido un poco porque aumentamos la altura del wrapper */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 20; 
+  margin-top: 20px; 
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #d1d5db;
+  z-index: 5; 
+}
+
+.cbLogo { 
+  height: 40px;
+  margin-right: 10px;
+}
+
+.circuloBrujasLogo { 
+  width: 90%; 
+  max-width: 380px; 
+  height: auto; 
+  margin-bottom: 20px; 
+}

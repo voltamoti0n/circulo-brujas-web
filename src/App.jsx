@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useState, useEffect, useRef } from 'react'; // Importar useRef
+import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Layout from './components/Layout/Layout.jsx';
@@ -14,7 +14,7 @@ import CalderoConocimientoPage from './pages/CalderoConocimientoPage/CalderoCono
 import UneteCasaPage from './pages/UneteCasaPage/UneteCasaPage.jsx';
 import ExploraLibreroPage from './pages/ExploraLibreroPage/ExploraLibreroPage.jsx';
 
-import useSound from './hooks/useSound'; // Importar tu hook useSound
+import useSound from './hooks/useSound';
 import './App.css';
 
 const pageVariants = {
@@ -38,7 +38,8 @@ const AnimatedPage = ({ children }) => (
   </motion.div>
 );
 
-const PlaceholderPage = ({ title }) => ( /* Este componente ya no se usa si todas las rutas tienen su página */
+// PlaceholderPage como estaba antes, envuelto en AnimatedPage si se usa
+const PlaceholderPage = ({ title }) => (
   <AnimatedPage>
     <div style={{ padding: '100px 20px', textAlign: 'center', color: 'white', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <h1>{title || 'Página en Construcción'}</h1>
@@ -52,10 +53,9 @@ function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   
-  // Punto 2: Sonido para transición de página
-  // Asegúrate de tener un sonido adecuado en esta ruta (o la que elijas)
-  const playPageTransitionSound = useSound('/assets/sounds/transicion.wav'); // CAMBIA ESTA RUTA Y NOMBRE DE ARCHIVO
-  const firstLoadRef = useRef(true); // Para evitar sonido en la carga inicial
+  // Sonido para transición DESPUÉS de la carga inicial
+  const playAppReadySound = useSound('/assets/sounds/page_transition_sound.wav'); // Renombrado para claridad
+  const initialLoadDone = useRef(false); // Para rastrear si la carga inicial ya ocurrió
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,17 +64,17 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Efecto para el sonido de transición de página
+  // Efecto para el sonido DESPUÉS de la carga inicial
   useEffect(() => {
-    if (firstLoadRef.current) {
-      firstLoadRef.current = false; // Marcar que la primera carga ya pasó
-      return;
+    // Si isLoading acaba de cambiar de true a false Y es la primera vez que esto sucede
+    if (!isLoading && !initialLoadDone.current) {
+      if (playAppReadySound) {
+        playAppReadySound();
+      }
+      initialLoadDone.current = true; // Marcar que el sonido de carga inicial ya se reprodujo
     }
-    // Solo reproducir si no es la primera carga
-    if (playPageTransitionSound && !isLoading) {
-        playPageTransitionSound();
-    }
-  }, [location.pathname, playPageTransitionSound, isLoading]); // Se ejecuta cuando cambia la ruta y no estamos cargando
+    // Ya no necesitamos el efecto que dependía de location.pathname para el sonido
+  }, [isLoading, playAppReadySound]); // Depende de isLoading y la función de sonido
 
   if (isLoading) {
     return <Preloader videoSrc="/assets/images/backgrounds/varita-magica.mp4" />;
@@ -95,7 +95,6 @@ function App() {
           <Route path="unete-casa" element={<AnimatedPage><UneteCasaPage /></AnimatedPage>} />
           <Route path="explora-librero" element={<AnimatedPage><ExploraLibreroPage /></AnimatedPage>} />
           
-          {/* Si tienes una página 404 específica, también envuélvela */}
           <Route path="*" element={<AnimatedPage><PlaceholderPage title="404 - Página No Encontrada" /></AnimatedPage>} />
         </Route>
       </Routes>

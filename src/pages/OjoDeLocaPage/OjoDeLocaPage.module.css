@@ -61,26 +61,26 @@
 /* La idea es que (0,0) es la esquina superior izquierda del .interactiveButtonsArea */
 
 .posBtnFlores { 
-  top: 69%;  /* % desde la parte superior del área del árbol */
-  left: 30%;  /* % desde la izquierda del área del árbol */
+  top: 31%;  /* % desde la parte superior del área del árbol */
+  left: 53%;  /* % desde la izquierda del área del árbol */
 } 
 
 .posBtnTamara { 
-  top: 59%; 
-  left: 58%; 
+  top: 50%; 
+  left: 65%; 
 } 
 
 .posBtnNancy { 
-  top: 101%; 
-  left: 88%; 
+  top: 82%; 
+  left: 92%; 
 } 
 
 .posBtnAlcatraces { 
-  top: 116%; /* Usando top en lugar de bottom para consistencia */
-  left: 37%; 
+  top: 99%; /* Usando top en lugar de bottom para consistencia */
+  left: 46%; 
 }   
 
 .posBtnNegra { 
-  top: 116%; 
-  left: 106%; 
+  top: 102%; 
+  left: 109%; 
 } 

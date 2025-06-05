@@ -33,8 +33,8 @@
   
   /* POSICIÓN: Distancia desde la esquina superior izquierda de la PANTALLA */
   /* hasta la esquina superior izquierda del ÁREA donde quieres el .leftPageContent */
-  top: 23%;    /* Ejemplo, AJUSTA */
-  left: 20%;   /* Ejemplo, AJUSTA */
+  top: 22%;    /* Ejemplo, AJUSTA */
+  left: 22%;   /* Ejemplo, AJUSTA */
   /* transform: translate(-50%, -50%); */ /* Quitado temporalmente para posicionar desde la esquina superior izquierda */
                                       /* Puedes volver a usarlo si prefieres posicionar desde el centro del div. */
   
@@ -64,8 +64,8 @@
 }
 
 .itemIcon {
-  width: 45px; 
-  height: 45px;
+  width: 66px; 
+  height: 66px;
   object-fit: contain;
 }
 

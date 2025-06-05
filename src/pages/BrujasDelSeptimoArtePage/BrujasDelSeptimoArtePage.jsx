@@ -38,10 +38,7 @@ const BrujasDelSeptimoArtePage = () => {
           ))}
         </div>
 
-        <div className={styles.sideTextContainer}>
-          <h2 className={styles.sideTitle}>Cineastas que inspiran</h2>
-          
-        </div>
+        
 
       </div>
     </div>

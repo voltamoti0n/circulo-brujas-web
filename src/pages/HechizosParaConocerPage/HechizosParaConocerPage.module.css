@@ -47,12 +47,12 @@
 /* --- Clases de Posicionamiento para las Pociones --- */
 /* ESTOS SON LOS VALORES QUE TÚ YA HABÍAS AJUSTADO Y FUNCIONABAN. */
 /* VERIFICA QUE SEAN LOS CORRECTOS. Los siguientes son ejemplos. */
-.potionPos1 { top: 43%; left: 39%; width: 50px; }
-.potionPos2 { top: 65%; left: 39%; width: 39px; transform: rotate(-5deg); }
-.potionPos3 { top: 67%; left: 51%; width: 52px; /* Asegúrate de que 'right' funcione o usa 'left' */ }
-.potionPos4 { top: 67%; left: 63%; width: 40px; transform: rotate(3deg); /* Asegúrate de que 'bottom' funcione o usa 'top' */ }
-.potionPos5 { top: 69%; left: 73%; width: 50px; }
-.potionPos6 { top: 98%; left: 67%; width: 36px; }
+.potionPos1 { top: 41%; left: 39%; width: 50px; }
+.potionPos2 { top: 63%; left: 41%; width: 36px; transform: rotate(-5deg); }
+.potionPos3 { top: 64%; left: 49%; width: 48px; /* Asegúrate de que 'right' funcione o usa 'left' */ }
+.potionPos4 { top: 63%; left: 61%; width: 40px; transform: rotate(3deg); /* Asegúrate de que 'bottom' funcione o usa 'top' */ }
+.potionPos5 { top: 65%; left: 68%; width: 49px; }
+.potionPos6 { top: 90%; left: 64%; width: 36px; }
 
 
 .textBelowLogoArea {

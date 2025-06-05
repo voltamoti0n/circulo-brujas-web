@@ -8,7 +8,7 @@ const CronicasAmatePage = () => {
 
   const mapIconsData = [
     { id: 'personajes', imgSrc: '/assets/images/icons/personajes.png', alt: '10 datos de personajes femeninos', styleClass: 'personajesIcon' },
-    { id: 'directoras', imgSrc: '/assets/images/icons/oportunidades.jpg', alt: 'Sin oportunidades', styleClass: 'directorasIcon' },
+    { id: 'directoras', imgSrc: '/assets/images/icons/oportunidades.png', alt: 'Sin oportunidades', styleClass: 'directorasIcon' },
     { id: 'moda', imgSrc: '/assets/images/icons/moda.png', alt: 'La moda', styleClass: 'modaIcon' },
     { id: 'lenterosa', imgSrc: '/assets/images/icons/camara.png', alt: 'Lente Rosa', styleClass: 'lenteRosaIcon' },
     { id: 'vestuario', imgSrc: '/assets/images/icons/vestuario.png', alt: 'Vestuario', styleClass: 'vestuarioIcon' },

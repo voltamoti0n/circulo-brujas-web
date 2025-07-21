@@ -1,0 +1,115 @@
+/* src/pages/BrujasDelSeptimoArtePage/MichelleGarzaPage.module.css */
+
+.pageContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1c1a3a;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 12vh 5vw;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.headerBlock {
+  min-height: 112vh;
+  align-items: flex-start;
+  background-image: url('/assets/images/michelle-garza/michelle_1.jpg');
+  background-position: center 80%;
+  padding-top: 15vh;
+}
+
+.introBlock {
+  align-items: center;
+  background-image: url('/assets/images/michelle-garza/michelle_2.jpg');
+}
+
+.storyBlock {
+  align-items: center;
+  background-image: url('/assets/images/michelle-garza/michelle_3.jpg');
+}
+
+.philosophyBlock {
+  min-height: 100vh;
+  align-items: center;
+  background-image: url('/assets/images/michelle-garza/michelle_4.jpg');
+}
+
+.impactBlock {
+  min-height: 100vh;
+  align-items: center;
+  background-image: url('/assets/images/michelle-garza/michelle_5.jpg');
+}
+
+.footerBlock {
+  min-height: auto;
+  height: 450px;
+  padding: 0;
+  background-image: url('/assets/images/michelle-garza/michelle_6.jpg');
+  background-size: contain;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.textWrapper {
+  max-width: 800px;
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-wrap;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.textBlack {
+  color: #212121;
+  text-shadow: none;
+}
+
+/* Replicamos los estilos de posicionamiento de texto que funcionaron */
+.introBlock .textWrapper {
+  max-width: 600px;
+  margin-left: 33%;
+  margin-right: auto;
+}
+
+.storyBlock .textWrapper {
+  max-width: 600px;
+  margin-left: 48%;
+  margin-right: auto;
+}
+
+.philosophyBlock .textWrapper {
+    max-width: 700px; 
+    margin-left: auto; 
+    margin-right: 3vw;
+}
+
+.impactBlock .textWrapper {
+    max-width: 700px; 
+    margin-right: auto;
+    margin-left: 3vw;
+}

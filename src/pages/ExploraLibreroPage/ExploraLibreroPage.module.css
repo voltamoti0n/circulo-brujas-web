@@ -4,21 +4,21 @@
   flex-grow: 1;
   width: 100%;
   display: flex;
+  /* Alineamos el contenido a la izquierda y lo centramos verticalmente */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; 
   position: relative;
-  /* Usar el mismo fondo que Home */
   background-image: url('/assets/images/backgrounds/fondo3.jpg'); 
   background-size: 125% auto; 
   background-position: center center;
   background-repeat: no-repeat;
-  overflow: hidden; /* Evitar scroll si el contenido interno (vacío) causa problemas */
-  padding: 20px; 
-  padding-top: 85px; /* Espacio para el header absoluto */
+  overflow: hidden; 
+  /* Añadimos padding a la izquierda para que el texto no pegue al borde */
+  padding: 85px 5vw 20px 8vw; 
   box-sizing: border-box;
   color: white;
 }
-.pageContainer::before { /* Mismo overlay que Home */
+.pageContainer::before {
   content: '';
   position: absolute;
   top: 0;
@@ -30,18 +30,34 @@
   pointer-events: none; 
 }
 
-.contentArea { /* Solo para centrar un posible texto futuro */
-  text-align: center;
-  padding: 20px;
+/* Contenedor del texto, sin fondo ni bordes */
+.textContainer {
+  max-width: 950px; /* Ancho máximo para el texto */
+  max-height: 700px;
+  text-align: left; /* Todo el texto alineado a la izquierda */
   z-index: 1;
 }
 
-.contentArea h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #e0e7ff;
+.textContainer h1 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #fde047; /* Tono amarillo/dorado para el título */
+  font-weight: 700;
+  text-align: left; /* Aseguramos alineación izquierda */
 }
-.contentArea p {
-  font-size: 1.2rem;
-  color: #c0bccc;
+
+.textContainer p {
+  font-size: 1.35rem;
+  color: #e0e7ff;
+  line-height: 1.7;
+  margin-bottom: 1.2em; /* Espacio entre párrafos */
+}
+
+.textContainer p:last-child {
+  margin-bottom: 0;
+}
+
+.textContainer strong {
+  color: #ffffff;
+  font-weight: 700;
 }

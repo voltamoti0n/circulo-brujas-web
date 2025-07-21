@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -13,6 +12,37 @@ import Preloader from './components/Preloader/Preloader.jsx';
 import CalderoConocimientoPage from './pages/CalderoConocimientoPage/CalderoConocimientoPage.jsx';
 import UneteCasaPage from './pages/UneteCasaPage/UneteCasaPage.jsx';
 import ExploraLibreroPage from './pages/ExploraLibreroPage/ExploraLibreroPage.jsx';
+
+// Importaciones de Brujas del Séptimo Arte
+import AnaTsuyebPage from './pages/BrujasDelSeptimoArtePage/AnaTsuyebPage.jsx';
+import LilaAvilesPage from './pages/BrujasDelSeptimoArtePage/LilaAvilesPage.jsx';
+import MichelleGarzaPage from './pages/BrujasDelSeptimoArtePage/MichelleGarzaPage.jsx';
+import AstridRonderoPage from './pages/BrujasDelSeptimoArtePage/AstridRonderoPage.jsx';
+import AngelesCruzPage from './pages/BrujasDelSeptimoArtePage/AngelesCruzPage.jsx';
+import NataliaBermudezPage from './pages/BrujasDelSeptimoArtePage/NataliaBermudezPage.jsx';
+import IssaLopezPage from './pages/BrujasDelSeptimoArtePage/IssaLopezPage.jsx';
+
+// Importaciones de Grimorio de Historias
+import AlquimistasPage from './pages/GrimorioPage/AlquimistasPage.jsx';
+import GuardianasPage from './pages/GrimorioPage/GuardianasPage.jsx';
+import CuranderasPage from './pages/GrimorioPage/CuranderasPage.jsx';
+import LectorasPage from './pages/GrimorioPage/LectorasPage.jsx';
+
+// Importaciones de Crónicas sobre Amate
+import DiezDatosPage from './pages/CronicasAmatePage/DiezDatosPage.jsx';
+import SinOportunidadesPage from './pages/CronicasAmatePage/SinOportunidadesPage.jsx';
+import ModaSimbologiaPage from './pages/CronicasAmatePage/ModaSimbologiaPage.jsx';
+import LenteRosaPage from './pages/CronicasAmatePage/LenteRosaPage.jsx';
+import DisenoVestuarioPage from './pages/CronicasAmatePage/DisenoVestuarioPage.jsx';
+
+// Importaciones de Hechizos para Conocer
+import ColorHistoriasPage from './pages/HechizosParaConocerPage/ColorHistoriasPage.jsx';
+import MundoAudiovisualPage from './pages/HechizosParaConocerPage/MundoAudiovisualPage.jsx';
+import NarrarHistoriasPage from './pages/HechizosParaConocerPage/NarrarHistoriasPage.jsx';
+import CapturaInstantePage from './pages/HechizosParaConocerPage/CapturaInstantePage.jsx';
+import EsquemaRembrandtPage from './pages/HechizosParaConocerPage/EsquemaRembrandtPage.jsx';
+import MatchCutPage from './pages/HechizosParaConocerPage/MatchCutPage.jsx';
+
 
 import useSound from './hooks/useSound';
 import './App.css';
@@ -38,7 +68,6 @@ const AnimatedPage = ({ children }) => (
   </motion.div>
 );
 
-// PlaceholderPage como estaba antes, envuelto en AnimatedPage si se usa
 const PlaceholderPage = ({ title }) => (
   <AnimatedPage>
     <div style={{ padding: '100px 20px', textAlign: 'center', color: 'white', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -53,9 +82,8 @@ function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   
-  // Sonido para transición DESPUÉS de la carga inicial
-  const playAppReadySound = useSound('/assets/sounds/page_transition_sound.wav'); // Renombrado para claridad
-  const initialLoadDone = useRef(false); // Para rastrear si la carga inicial ya ocurrió
+  const playAppReadySound = useSound('/assets/sounds/page_transition_sound.wav');
+  const initialLoadDone = useRef(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,17 +92,14 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Efecto para el sonido DESPUÉS de la carga inicial
   useEffect(() => {
-    // Si isLoading acaba de cambiar de true a false Y es la primera vez que esto sucede
     if (!isLoading && !initialLoadDone.current) {
       if (playAppReadySound) {
         playAppReadySound();
       }
-      initialLoadDone.current = true; // Marcar que el sonido de carga inicial ya se reprodujo
+      initialLoadDone.current = true;
     }
-    // Ya no necesitamos el efecto que dependía de location.pathname para el sonido
-  }, [isLoading, playAppReadySound]); // Depende de isLoading y la función de sonido
+  }, [isLoading, playAppReadySound]);
 
   if (isLoading) {
     return <Preloader videoSrc="/assets/images/backgrounds/varita-magica.mp4" />;
@@ -85,11 +110,38 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
           <Route index element={<AnimatedPage><Home /></AnimatedPage>} />
+          
           <Route path="brujas-del-septimo-arte" element={<AnimatedPage><BrujasDelSeptimoArtePage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/ana-tsuyeb" element={<AnimatedPage><AnaTsuyebPage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/lila-aviles" element={<AnimatedPage><LilaAvilesPage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/michelle-garza-cervera" element={<AnimatedPage><MichelleGarzaPage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/astrid-rondero" element={<AnimatedPage><AstridRonderoPage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/angeles-cruz" element={<AnimatedPage><AngelesCruzPage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/natalia-bermudez" element={<AnimatedPage><NataliaBermudezPage /></AnimatedPage>} />
+          <Route path="brujas-del-septimo-arte/issa-lopez" element={<AnimatedPage><IssaLopezPage /></AnimatedPage>} />
+          
           <Route path="ojo-de-loca" element={<AnimatedPage><OjoDeLocaPage /></AnimatedPage>} />
+
           <Route path="grimorio-de-historias" element={<AnimatedPage><GrimorioPage /></AnimatedPage>} />
+          <Route path="grimorio-de-historias/alquimistas" element={<AnimatedPage><AlquimistasPage /></AnimatedPage>} />
+          <Route path="grimorio-de-historias/guardianas" element={<AnimatedPage><GuardianasPage /></AnimatedPage>} />
+          <Route path="grimorio-de-historias/curanderas" element={<AnimatedPage><CuranderasPage /></AnimatedPage>} />
+          <Route path="grimorio-de-historias/lectoras" element={<AnimatedPage><LectorasPage /></AnimatedPage>} />
+          
           <Route path="cronicas-sobre-amate" element={<AnimatedPage><CronicasAmatePage /></AnimatedPage>} />
+          <Route path="cronicas-sobre-amate/diez-datos-personajes" element={<AnimatedPage><DiezDatosPage /></AnimatedPage>} />
+          <Route path="cronicas-sobre-amate/sin-oportunidades" element={<AnimatedPage><SinOportunidadesPage /></AnimatedPage>} />
+          <Route path="cronicas-sobre-amate/moda-simbologia" element={<AnimatedPage><ModaSimbologiaPage /></AnimatedPage>} />
+          <Route path="cronicas-sobre-amate/lente-rosa" element={<AnimatedPage><LenteRosaPage /></AnimatedPage>} />
+          <Route path="cronicas-sobre-amate/diseno-vestuario" element={<AnimatedPage><DisenoVestuarioPage /></AnimatedPage>} />
+
           <Route path="hechizos-para-conocer" element={<AnimatedPage><HechizosParaConocerPage /></AnimatedPage>} />
+          <Route path="hechizos-para-conocer/color-historias" element={<AnimatedPage><ColorHistoriasPage /></AnimatedPage>} />
+          <Route path="hechizos-para-conocer/mundo-audiovisual" element={<AnimatedPage><MundoAudiovisualPage /></AnimatedPage>} />
+          <Route path="hechizos-para-conocer/narrar-historias" element={<AnimatedPage><NarrarHistoriasPage /></AnimatedPage>} />
+          <Route path="hechizos-para-conocer/captura-instante" element={<AnimatedPage><CapturaInstantePage /></AnimatedPage>} />
+          <Route path="hechizos-para-conocer/esquema-rembrandt" element={<AnimatedPage><EsquemaRembrandtPage /></AnimatedPage>} />
+          <Route path="hechizos-para-conocer/match-cut" element={<AnimatedPage><MatchCutPage /></AnimatedPage>} />
           
           <Route path="caldero-conocimiento" element={<AnimatedPage><CalderoConocimientoPage /></AnimatedPage>} />
           <Route path="unete-casa" element={<AnimatedPage><UneteCasaPage /></AnimatedPage>} />

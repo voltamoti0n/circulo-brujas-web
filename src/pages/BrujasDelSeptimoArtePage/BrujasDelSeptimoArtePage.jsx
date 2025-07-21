@@ -1,29 +1,32 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './BrujasDelSeptimoArtePage.module.css';
-import useParallaxBackground from '../../hooks/useParallaxBackground';
 
 const BrujasDelSeptimoArtePage = () => {
-  const pageRef = useRef(null);
-  // useParallaxBackground(pageRef, 0.015); 
+  const navigate = useNavigate();
 
-  // Datos para los botones/etiquetas principales
+  // El array ya contiene los IDs correctos para Ángeles y Natalia. 
+  // Ahora que las rutas existen, los botones funcionarán.
   const cineastaLabelsData = [
-    { id: 'ana', labelText: "Ana Ts'uyeb", positionClass: 'labelPosAna' },
-    { id: 'michelle', labelText: 'Michelle Garza Cervera', positionClass: 'labelPosMichelle' },
-    { id: 'angeles', labelText: 'Ángeles Cruz', positionClass: 'labelPosAngeles' },
-    { id: 'lila', labelText: 'Lila Avilés', positionClass: 'labelPosLila' },
-    { id: 'astrid', labelText: 'Astrid Rondero', positionClass: 'labelPosAstrid' },
-    { id: 'natalia', labelText: 'Natalia Bermúdez', positionClass: 'labelPosNatalia' },
-    { id: 'issa', labelText: 'Issa López', positionClass: 'labelPosIssa' },
-    // Issa López se manejará en el sideTextContainer
+    { id: 'ana-tsuyeb', labelText: "Ana Ts'uyeb", positionClass: 'labelPosAna' },
+    { id: 'michelle-garza-cervera', labelText: 'Michelle Garza Cervera', positionClass: 'labelPosMichelle' },
+    { id: 'angeles-cruz', labelText: 'Ángeles Cruz', positionClass: 'labelPosAngeles' },
+    { id: 'lila-aviles', labelText: 'Lila Avilés', positionClass: 'labelPosLila' },
+    { id: 'astrid-rondero', labelText: 'Astrid Rondero', positionClass: 'labelPosAstrid' },
+    { id: 'natalia-bermudez', labelText: 'Natalia Bermúdez', positionClass: 'labelPosNatalia' },
+    { id: 'issa-lopez', labelText: 'Issa López', positionClass: 'labelPosIssa' },
   ];
 
   const handleCineastaClick = (cineastaId) => {
-    console.log(`Cineasta/Botón clickeado: ${cineastaId}`);
+    if (cineastaId) {
+      navigate(`/brujas-del-septimo-arte/${cineastaId}`);
+    } else {
+      console.log(`ID de cineasta no válido: ${cineastaId}`);
+    }
   };
 
   return (
-    <div ref={pageRef} className={styles.pageContainer}>
+    <div className={styles.pageContainer}>
       <div className={styles.contentGrid}>
         
         <div className={styles.interactiveLabelsArea}>
@@ -37,8 +40,6 @@ const BrujasDelSeptimoArtePage = () => {
             </button>
           ))}
         </div>
-
-        
 
       </div>
     </div>

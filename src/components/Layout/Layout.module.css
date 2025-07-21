@@ -6,23 +6,28 @@
   width: 100%;
 }
 
-.header {
-  /* Punto 1 y 2: Header estático y transparente */
+/* Nuevo estilo para el fondo condicional del header */
+.headerBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 20px 35px; /* Aumentar padding para más aire */
+  height: 85px; /* Misma altura que el padding del header + un poco más */
+  background-color: #1a173a;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.header {
+  width: 100%;
+  padding: 20px 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  
-  /* Completamente transparente o sin background-color */
   background-color: transparent; 
-  /* backdrop-filter: blur(10px); */ /* Quitado para transparencia total */
-  
   box-sizing: border-box;
-  /* Quitar border-bottom si se quiere aún más minimalista */
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
-  position: absolute; /* Para que esté sobre el contenido de las páginas */
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -33,7 +38,7 @@
 }
 
 .cbLogo { 
-  height: 40px; /* Restaurar tamaño original si se prefiere */
+  height: 40px;
   margin-right: 15px;
   transition: transform 0.3s ease;
 }
@@ -46,19 +51,19 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 35px; /* Más espacio entre ítems */
+  gap: 35px;
   align-items: center; 
 }
 
 .header nav a, .header nav button {
-  color: #f0f0f0; /* Color de texto claro para que contraste con fondos oscuros */
+  color: #f0f0f0;
   text-decoration: none;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  font-size: 0.95rem; /* Tamaño de fuente del menú */
+  font-size: 0.95rem;
   font-weight: 500;
   padding: 8px 0; 
   letter-spacing: 0.5px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Sombra sutil para legibilidad */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .header nav a:hover {
@@ -90,5 +95,4 @@
   box-sizing: border-box;
   display: flex; 
   flex-direction: column;
-  /* No se necesita padding-top porque el header es absolute y las páginas deben manejar su propio padding si es necesario */
 }

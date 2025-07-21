@@ -10,7 +10,7 @@
   box-sizing: border-box;
   color: white; 
   background-image: url('/assets/images/backgrounds/fondo-cronicas.jpg');
-  background-size: cover; /* Punto 6: Evitar zoom excesivo, 'cover' es usualmente bueno */
+  background-size: cover;
   background-position: center center; 
   background-repeat: no-repeat;
   transition: background-position 0.1s linear; 
@@ -18,18 +18,14 @@
 }
 
 .leftTextContainer {
-  flex-basis: 28%; /* Ajustar si es necesario */
+  flex-basis: 28%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrar el quote verticalmente si no hay logo */
+  justify-content: center;
   align-items: flex-start; 
   padding-right: 30px;
   z-index: 1;
 }
-
-/* .sectionLogo { ... }  Ya no se necesita si se eliminó el logo del JSX */
-
-
 
 .interactiveMapArea {
   flex-grow: 1; 
@@ -45,7 +41,7 @@
 }
 
 .mapIconImage {
-  width: 70px; 
+  width: 100%; /* <-- CAMBIO CLAVE: Ahora la imagen es responsiva a su contenedor */
   height: auto;
   filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.4));
   cursor: pointer; 
@@ -55,9 +51,9 @@
   transform: scale(1.1);
 }
 
-/* Clases de Posicionamiento para Iconos del Mapa - AJUSTAR ESTOS VALORES */
-.personajesIcon { top: 33%; left: 3%; width: 38px; }
-.directorasIcon { top: 48%; left: 18%; width: 69px; }
-.modaIcon { top: 53%; left: 40%; transform: translateX(50%) scale(1.05); width: 60px;}
-.lenteRosaIcon { bottom: 7%; left: 11%; width: 80px; }
-.vestuarioIcon { bottom: 4%; left: 47%; width: 50px; }
+/* AHORA SÍ PUEDES CAMBIAR ESTOS VALORES 'width' PARA AJUSTAR EL TAMAÑO */
+.personajesIcon { top: 33%; left: 3%; width: 69px; } /* Ejemplo de un tamaño mayor */
+.directorasIcon { top: 48%; left: 18%; width: 100px; }
+.modaIcon { top: 53%; left: 40%; transform: translateX(50%) scale(1.05); width: 69px;}
+.lenteRosaIcon { bottom: 7%; left: 11%; width: 85px; }
+.vestuarioIcon { bottom: 4%; left: 47%; width: 90px; } /* Ejemplo de un tamaño mayor */

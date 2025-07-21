@@ -1,0 +1,163 @@
+/* src/pages/GrimorioPage/CuranderasPage.module.css */
+.pageContainer {
+  min-height: 0;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url('/assets/images/backgrounds/fondo3.jpg'); 
+  background-size: 125% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 85px 2vw 20px;
+  box-sizing: border-box;
+  color: white;
+}
+.pageContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 17, 49, 0.65);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.textBlock {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  margin-bottom: 3vh;
+  padding-left: 2vw;
+  z-index: 10;
+}
+.textBlock h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+}
+.textBlock p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+.textBlock strong {
+  color: #fde047;
+  font-weight: 600;
+}
+
+.carouselSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  height: 355px; /* Altura ajustada como solicitaste */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2500px;
+  overflow: visible;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.imageContainer {
+  position: absolute;
+  width: 280px;
+  height: 380px;
+  top: 50%;
+  left: 50%;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  background-color: #111;
+  transition: border-color 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.imageContainer.activeImage {
+  cursor: pointer;
+  border-color: #facc15;
+}
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  margin-top: 25px;
+  z-index: 2000;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 75vw;
+  max-height: 80vh;
+}
+
+.modalImage {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.15);
+}
+
+.closeButton {
+  position: absolute;
+  top: -45px;
+  right: -20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 200;
+  cursor: pointer;
+  line-height: 1;
+  padding: 5px;
+}

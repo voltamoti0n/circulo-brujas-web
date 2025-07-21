@@ -1,0 +1,32 @@
+/* src/pages/CronicasAmatePage/DiezDatosPage.module.css */
+/* Este mismo código aplica para: */
+/* SinOportunidadesPage.module.css, ModaSimbologiaPage.module.css, */
+/* LenteRosaPage.module.css, y DisenoVestuarioPage.module.css */
+
+.pageContainer {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fdfaf0;
+  line-height: 0;
+  /* 'position: relative' ha sido eliminado para que .headerBackground funcione correctamente */
+}
+
+/* Solución para el fondo del Header */
+.headerBackground {
+  position: fixed; /* Se fija a la ventana del navegador */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background-color: #1a173a;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.contentImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}

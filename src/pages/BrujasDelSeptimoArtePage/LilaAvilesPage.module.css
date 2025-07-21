@@ -1,0 +1,153 @@
+/* src/pages/BrujasDelSeptimoArtePage/LilaAvilesPage.module.css */
+
+.pageContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1c1a3a;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 12vh 5vw;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.headerBlock {
+  min-height: 112vh;
+  align-items: flex-start;
+  background-image: url('/assets/images/lila-aviles/lila_1.jpg');
+  background-position: center 80%;
+  padding-top: 15vh;
+}
+
+.introBlock {
+  align-items: center;
+  background-image: url('/assets/images/lila-aviles/lila_2.jpg');
+}
+
+.storyBlock {
+  align-items: center;
+  background-image: url('/assets/images/lila-aviles/lila_3.jpg');
+}
+
+.philosophyBlock {
+  min-height: 100vh;
+  align-items: center;
+  background-image: url('/assets/images/lila-aviles/lila_4.jpg');
+}
+
+.impactBlock {
+  min-height: 100vh;
+  align-items: center;
+  background-image: url('/assets/images/lila-aviles/lila_5.jpg');
+}
+
+.footerBlock {
+  min-height: auto;
+  height: 450px;
+  padding: 0;
+  background-image: url('/assets/images/lila-aviles/lila_6.jpg');
+  background-size: contain;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.textWrapper {
+  max-width: 800px;
+  text-align: center;
+  padding: 10px;
+}
+
+.totemBlock {
+  background-color: rgba(221, 231, 133, 0.671);
+  border-radius: 35px;
+  padding: 14px 14px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-wrap;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.boldText {
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 15px;
+  color: #fde047;
+}
+
+.textBlack {
+  color: #212121;
+  text-shadow: none;
+}
+
+.boldTextBlack {
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.introBlock .textWrapper {
+  max-width: 600px;
+  margin-left: 33%;
+  margin-right: auto;
+}
+
+.storyBlock .textWrapper {
+  max-width: 600px;
+  margin-left: 48%;
+  margin-right: auto;
+}
+
+.philosophyBlock .textWrapper {
+  max-width: 450px; 
+  max-height: 450px;
+  margin-right: auto; 
+  margin-left: 0.5vw;
+}
+
+.impactBlock .textWrapper {
+    max-width: 700px; 
+    max-height: 450px;
+    margin-left: auto; 
+    margin-right: 3vw; 
+}
+
+
+/* Esta regla SOLO afecta a los párrafos dentro del bloque "Tótem". */
+.philosophyBlock .paragraph {
+  /* --> ESTE es el valor que puedes ajustar manualmente. */
+  font-size: 0.71rem; 
+  line-height: 1.6; /* Se ajusta la altura de línea para la nueva fuente */
+}
+
+/* Esta regla SOLO afecta a los párrafos dentro del último bloque de texto. */
+.impactBlock .paragraph {
+  /* --> Y ESTE es el otro valor que puedes ajustar manualmente. */
+  font-size: 0.82rem;
+  line-height: 1.6;
+}

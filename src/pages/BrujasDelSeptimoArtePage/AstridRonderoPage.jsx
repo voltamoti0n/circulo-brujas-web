@@ -28,7 +28,7 @@ const AstridRonderoPage = () => {
       
       <section className={`${styles.block} ${styles.philosophyBlock}`}>
           <div className={styles.textWrapper}>
-              <p className={styles.paragraph}>
+              <p className={`${styles.paragraph} ${styles.textBlack}`}>
                   Astrid no busca contar historias heroicas, sino humanas. Para Los días más oscuros de nosotras, reunió a un equipo femenino que exploró sus propias experiencias en espacios masculinizados. Ella misma dice que la película refleja cómo se sentía siendo mujer en la industria del cine mexicano. En Sujo, su más reciente película, abordó la vida de un huérfano del narco, cuestionando si el destino está determinado por el entorno. Inspirada en el periodismo de Javier Valdez, Astrid quiso humanizar a quienes viven atrapados por la violencia. Un dato clave de su proceso creativo es que participó activamente en la edición de sus películas, donde dice que realmente descubre el corazón de cada historia.
               </p>
           </div>
@@ -36,7 +36,7 @@ const AstridRonderoPage = () => {
 
       <section className={`${styles.block} ${styles.impactBlock}`}>
         <div className={styles.textWrapper}>
-          <p className={`${styles.paragraph} ${styles.textBlack}`}>
+          <p className={styles.paragraph}>
               Más allá de los premios, Rondero es reconocida por abrir espacios a nuevas voces femeninas en el cine mexicano. Ha sido becaria de Jóvenes Creadores y miembro del Sistema Nacional de Creadores de Arte.
               <br /><br />
               Su trabajo ha influido en la visibilidad de temáticas como la violencia de género, la orfandad provocada por el narco y la lucha por la autonomía femenina en ambientes hostiles. Astrid define su cine como un acto kamikaze, porque siempre esta dispuesto a arriesgarse por contar lo que otros prefieren callar. Su motivación es clara: hacer cine para comprendernos mejor como sociedad y cuestionar los destinos impuestos.

@@ -28,18 +28,20 @@ const MichelleGarzaPage = () => {
         </div>
       </section>
       
+      {/* CAMBIO AQUÍ: Se añade la clase .textBlack para que el texto sea negro */}
       <section className={`${styles.block} ${styles.philosophyBlock}`}>
           <div className={styles.textWrapper}>
-              <p className={styles.paragraph}>
+              <p className={`${styles.paragraph} ${styles.textBlack}`}>
                   Michelle dice que su arte son sus propios miedos y pesadillas. Su cine nace del deseo de romper con estereotipos, especialmente sobre las mujeres en el terror, donde históricamente han sido víctimas o personajes moralistas. En Huesera, explora el miedo a la maternidad no deseada y la presión social por formar una familia perfecta. Su proceso creativo está lleno de referencias literarias como Frankenstein y películas como El bebé de Rosemary, pero siempre desde una perspectiva feminista y crítica. Además, integra su experiencia en el punk: hacer cine sin miedo a romper las reglas.
               </p>
           </div>
       </section>
 
+      {/* CAMBIO AQUÍ: Se quita la clase .textBlack para que el texto sea blanco (por defecto) */}
       <section className={`${styles.block} ${styles.impactBlock}`}>
         <div className={styles.textWrapper}>
-          <p className={`${styles.paragraph} ${styles.textBlack}`}>
-              Michelle no busca solo asustar, quiere que el terror sirva para incomodar y cuestionar lo que parece normal. Para ella, el género fantástico permite revelar opresiones invisibles, como la familia nuclear, la presión social sobre las mujeres y los miedos internos que no siempre se nombran. Huesera es el reflejo de esas preguntas incómodas. A futuro, quiere explorar la ciencia ficción y adaptar obras literarias feministas y de horror. Como ella misma dice: "Mi cine es una mentira que muestra las verdades más profundas que a veces no nos atrevemos a decir en voz alta".
+          <p className={styles.paragraph}>
+              Michelle no solo busca asustar, quiere que el terror sirva para incomodar y cuestionar lo que parece normal. Para ella, el género fantástico permite revelar opresiones invisibles, como la familia nuclear, la presión social sobre las mujeres y los miedos internos que no siempre se nombran. Huesera es el reflejo de esas preguntas incómodas. A futuro, quiere explorar la ciencia ficción y adaptar obras literarias feministas y de horror. Como ella misma dice: "Mi cine es una mentira que muestra las verdades más profundas que a veces no nos atrevemos a decir en voz alta".
           </p>
         </div>
       </section>

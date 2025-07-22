@@ -61,13 +61,13 @@
 }
 
 /* Clases de Posicionamiento para cada Botón/Etiqueta en .interactiveLabelsArea */
-.labelPosAna { top: 21%; left: 8%; }        
-.labelPosMichelle { top: 21%; left: 33%; }   
-.labelPosAngeles { top: 21%; left: 58%; }    
-.labelPosLila { top: 59%; left: 8%; }       
-.labelPosAstrid { top: 68%; left: 34%; }     
-.labelPosNatalia { top: 69%; left: 59%; }  
-.labelPosIssa { top: 21%; left: 83%; }    
+.labelPosAna { top: 20%; left: 12%; }        
+.labelPosMichelle { top: 20%; left: 35%; }   
+.labelPosAngeles { top: 20%; left: 59%; }    
+.labelPosLila { top: 58%; left: 11%; }       
+.labelPosAstrid { top: 67%; left: 36%; }     
+.labelPosNatalia { top: 68%; left: 60%; }  
+.labelPosIssa { top: 20%; left: 82%; }    
 /* Ya no hay .labelPosIssa aquí si se maneja en .sideTextContainer */
 
 

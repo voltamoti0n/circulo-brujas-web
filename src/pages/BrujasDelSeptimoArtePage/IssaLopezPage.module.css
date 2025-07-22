@@ -29,23 +29,25 @@
 }
 
 .introBlock {
+  min-height: 75vh;
   align-items: center;
   background-image: url('/assets/images/issa-lopez/issa_2.jpg');
 }
 
 .storyBlock {
+  min-height: 100vh;
   align-items: center;
   background-image: url('/assets/images/issa-lopez/issa_3.jpg');
 }
 
 .philosophyBlock {
-  min-height: 100vh;
+  min-height: 90vh;
   align-items: center;
   background-image: url('/assets/images/issa-lopez/issa_4.jpg');
 }
 
 .impactBlock {
-  min-height: 100vh;
+  min-height: 90vh;
   align-items: center;
   background-image: url('/assets/images/issa-lopez/issa_5.jpg');
 }
@@ -84,23 +86,27 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
+.textBlack {
+  color: #212121;
+  text-shadow: none;
+}
 /* Posicionamiento de texto basado en el prototipo de Issa López */
 .introBlock .textWrapper {
   max-width: 650px; 
   margin-left: auto;
-  margin-right: 5vw;
+  margin-right: 15vw;
 }
 
 .storyBlock .textWrapper {
   max-width: 600px;
   margin-right: auto;
-  margin-left: 5vw;
+  margin-left: 2vw;
 }
 
 .philosophyBlock .textWrapper {
   max-width: 700px; 
   margin-left: auto; 
-  margin-right: 3vw;
+  margin-right: 2vw;
 }
 
 .impactBlock .textWrapper {

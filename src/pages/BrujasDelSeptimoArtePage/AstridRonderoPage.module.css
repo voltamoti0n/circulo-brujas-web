@@ -29,17 +29,19 @@
 }
 
 .introBlock {
+  min-height: 80vh;
   align-items: center;
   background-image: url('/assets/images/astrid-rondero/astrid_2.jpg');
 }
 
 .storyBlock {
+  min-height: 88vh;
   align-items: center;
   background-image: url('/assets/images/astrid-rondero/astrid_3.jpg');
 }
 
 .philosophyBlock {
-  min-height: 100vh;
+  min-height: 87vh;
   align-items: center;
   background-image: url('/assets/images/astrid-rondero/astrid_4.jpg');
 }
@@ -105,11 +107,11 @@
 .philosophyBlock .textWrapper {
     max-width: 700px; 
     margin-left: auto; 
-    margin-right: 3vw;
+    margin-right: 40vw;
 }
 
 .impactBlock .textWrapper {
     max-width: 700px; 
     margin-right: auto;
-    margin-left: 3vw;
+    margin-left: 53vw;
 }

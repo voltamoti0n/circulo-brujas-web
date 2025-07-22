@@ -14,7 +14,7 @@ const IssaLopezPage = () => {
       {/* Bloque 2: Introducción */}
       <section className={`${styles.block} ${styles.introBlock}`}>
         <div className={styles.textWrapper}>
-          <p className={styles.paragraph}>
+          <p className={`${styles.paragraph} ${styles.textBlack}`}>
             Issa López nació en Ciudad de México, en un hogar atravesado por la pérdida y la imaginación. Su madre murió cuando ella tenía ocho años, y fue criada por su padre, un hombre que le heredó el amor por la literatura, los cómics y el cine de terror. Desde pequeña, Issa entendió que contar historias podía ser una forma de sobrevivir.
             <br /><br />
             Estudió en la Facultad de Filosofía y Letras de la UNAM y más tarde en el Centro de Capacitación Cinematográfica (CCC), donde encontró su vocación como guionista y directora. Su mirada, marcada por el dolor personal y la sensibilidad hacia las infancias, se transformaría con los años en una de las voces más singulares del cine mexicano contemporáneo.
@@ -49,7 +49,7 @@ const IssaLopezPage = () => {
       {/* Bloque 5: Proceso Creativo y Filosofía */}
       <section className={`${styles.block} ${styles.impactBlock}`}>
         <div className={styles.textWrapper}>
-          <p className={styles.paragraph}>
+          <p className={`${styles.paragraph} ${styles.textBlack}`}>
               Issa López ha dicho en múltiples entrevistas que su proceso creativo parte de la disciplina. Escribe todos los días, y muchas veces una historia nace de una sola imagen que no puede sacarse de la cabeza. A partir de ahí, construye emociones, personajes y tramas que conectan lo personal con lo colectivo.
               <br /><br />
               Su cine no usa el horror como simple entretenimiento: lo convierte en herramienta para hablar del duelo, la pérdida, la infancia rota y la búsqueda de justicia. Le interesa provocar más que complacer, y encontrar belleza incluso en lo más oscuro.

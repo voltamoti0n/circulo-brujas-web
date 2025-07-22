@@ -34,6 +34,7 @@
 }
 
 .storyBlock {
+  min-height: 90vh;
   align-items: center;
   background-image: url('/assets/images/michelle-garza/michelle_3.jpg');
 }
@@ -98,18 +99,18 @@
 
 .storyBlock .textWrapper {
   max-width: 600px;
-  margin-left: 48%;
+  margin-left: 4%;
   margin-right: auto;
 }
 
 .philosophyBlock .textWrapper {
     max-width: 700px; 
     margin-left: auto; 
-    margin-right: 3vw;
+    margin-right: 2vw;
 }
 
 .impactBlock .textWrapper {
     max-width: 700px; 
     margin-right: auto;
-    margin-left: 3vw;
+    margin-left: 2px;
 }

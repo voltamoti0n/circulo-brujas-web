@@ -1,6 +1,7 @@
 // src/pages/BrujasDelSeptimoArtePage/MichelleGarzaPage.jsx
 import React from 'react';
 import styles from './MichelleGarzaPage.module.css';
+import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 const MichelleGarzaPage = () => {
   return (
@@ -46,7 +47,10 @@ const MichelleGarzaPage = () => {
         </div>
       </section>
       
-      <section className={`${styles.block} ${styles.footerBlock}`} />
+      {/* Bloque 6: Footer con los botones de redes sociales dentro */}
+      <section className={styles.footerBlock}>
+        <SocialFooter />
+      </section>
 
     </div>
   );

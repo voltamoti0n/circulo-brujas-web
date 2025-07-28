@@ -61,6 +61,7 @@
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative; /* Clave para que los botones se posicionen aquí dentro */
 }
 
 .textWrapper {
@@ -108,9 +109,8 @@
   margin-right: 2vw;
 }
 
-/* --- SECCIÓN CORREGIDA --- */
 .impactBlock .textWrapper {
-  max-width: 59%; /* Reducimos el ancho para que quepa en el recuadro */
+  max-width: 59%;
   margin-right: auto;
-  margin-left: -4vw; /* Lo movemos más a la izquierda */
+  margin-left: -4vw;
 }

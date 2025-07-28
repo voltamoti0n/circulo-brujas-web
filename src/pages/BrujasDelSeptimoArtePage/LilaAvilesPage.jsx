@@ -1,6 +1,7 @@
 // src/pages/BrujasDelSeptimoArtePage/LilaAvilesPage.jsx
 import React from 'react';
 import styles from './LilaAvilesPage.module.css';
+import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 const LilaAvilesPage = () => {
   return (
@@ -62,11 +63,13 @@ const LilaAvilesPage = () => {
         </div>
       </section>
       
-      {/* Bloque 6: Footer */}
-      <section className={`${styles.block} ${styles.footerBlock}`} />
-
-    </div>
-  );
-};
+      {/* Bloque 6: Footer con los botones de redes sociales dentro */}
+            <section className={styles.footerBlock}>
+              <SocialFooter />
+            </section>
+      
+          </div>
+        );
+      };
 
 export default LilaAvilesPage;

@@ -1,6 +1,7 @@
 // src/pages/BrujasDelSeptimoArtePage/AstridRonderoPage.jsx
 import React from 'react';
 import styles from './AstridRonderoPage.module.css';
+import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 const AstridRonderoPage = () => {
   return (
@@ -44,7 +45,10 @@ const AstridRonderoPage = () => {
         </div>
       </section>
       
-      <section className={`${styles.block} ${styles.footerBlock}`} />
+      {/* Bloque 6: Footer con los botones de redes sociales dentro */}
+      <section className={styles.footerBlock}>
+        <SocialFooter />
+      </section>
 
     </div>
   );

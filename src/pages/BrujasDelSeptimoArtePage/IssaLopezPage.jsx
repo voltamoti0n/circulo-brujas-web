@@ -1,6 +1,7 @@
 // src/pages/BrujasDelSeptimoArtePage/IssaLopezPage.jsx
 import React from 'react';
 import styles from './IssaLopezPage.module.css';
+import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 const IssaLopezPage = () => {
   return (
@@ -61,11 +62,14 @@ const IssaLopezPage = () => {
         </div>
       </section>
       
-      {/* Bloque 6: Footer */}
-      <section className={styles.footerBlock} />
+      {/* Bloque 6: Footer con los botones de redes sociales dentro */}
+      <section className={styles.footerBlock}>
+        <SocialFooter />
+      </section>
 
     </div>
   );
 };
+
 
 export default IssaLopezPage;

@@ -6,7 +6,7 @@ const SocialFooter = () => {
   return (
     <>
       <a 
-        href="https://www.instagram.com/circulodebrujas" 
+        href="https://www.instagram.com/circulodebrujas_/" 
         target="_blank" 
         rel="noopener noreferrer"
         className={`${styles.socialLink} ${styles.instagramLink}`}
@@ -14,7 +14,7 @@ const SocialFooter = () => {
         Ig @circulodebrujas
       </a>
       <a 
-        href="https://www.tiktok.com/@circulodebrujas" 
+        href="https://www.tiktok.com/@circulodbrujas?is_from_webapp=1&sender_device=pc" 
         target="_blank" 
         rel="noopener noreferrer"
         className={`${styles.socialLink} ${styles.tiktokLink}`}
@@ -22,7 +22,7 @@ const SocialFooter = () => {
         TikTok @circulodebrujas
       </a>
       <a 
-        href="https://www.youtube.com/@CirculoDBrujas" 
+        href="https://youtube.com/channel/UCmKu9W_AxmXDShXXv36wgDg" 
         target="_blank" 
         rel="noopener noreferrer"
         className={`${styles.socialLink} ${styles.youtubeLink}`}

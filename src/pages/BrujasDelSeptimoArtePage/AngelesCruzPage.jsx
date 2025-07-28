@@ -1,6 +1,7 @@
 // src/pages/BrujasDelSeptimoArtePage/AngelesCruzPage.jsx
 import React from 'react';
 import styles from './AngelesCruzPage.module.css';
+import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 const AngelesCruzPage = () => {
   return (
@@ -55,8 +56,10 @@ const AngelesCruzPage = () => {
         </div>
       </section>
       
-      {/* Bloque 6: Footer */}
-      <section className={styles.footerBlock} />
+       {/* Bloque 6: Footer con los botones de redes sociales dentro */}
+      <section className={styles.footerBlock}>
+        <SocialFooter />
+      </section>
 
     </div>
   );

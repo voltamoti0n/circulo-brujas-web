@@ -32,7 +32,7 @@
 
 .logoHeaderArea {
   text-align: center;
-  margin-bottom: 35px; /* Un poco más de espacio */
+  margin-bottom: 35px;
   z-index: 1;
   margin-top: 15px; 
 }
@@ -52,18 +52,18 @@
 
 .quizLayout {
   display: grid;
-  grid-template-columns: 0.6fr 1.4fr; /* Dar más espacio a la columna de preguntas */
+  grid-template-columns: 0.6fr 1.4fr;
   gap: 30px 50px; 
   width: 100%;
-  max-width: 950px; /* Aumentar un poco el ancho máximo del quiz si es necesario */
+  max-width: 950px;
   z-index: 1;
-  align-items: flex-start; /* Alinear columnas desde arriba */
+  align-items: flex-start;
 }
 
 .scoreColumn {
   color: #e0e7ff;
   padding-right: 15px; 
-  padding-top: 5px; /* Para alinear mejor con el texto de la primera pregunta */
+  padding-top: 5px;
 }
 
 .scoreTitle {
@@ -92,35 +92,31 @@
 .questionsColumn {
   display: flex;
   flex-direction: column;
-  gap: 25px; /* Espacio vertical entre cada pregunta completa */
+  gap: 25px;
   overflow: hidden; 
 }
 
-/* Punto 1: Acomodo de pregunta y opciones */
 .questionItem {
-  display: flex; /* Convertir en contenedor flex */
-  justify-content: space-between; /* Texto a la izq, opciones a la der */
-  align-items: center; /* Centrar verticalmente texto y opciones */
-  /* border-bottom: 1px solid rgba(255,255,255,0.1); */ /* Opcional: separador */
-  padding-bottom: 10px; /* Espacio si hay separador */
-  margin-bottom: 10px; /* Espacio adicional entre items de pregunta */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .questionText {
-  font-size: 0.9rem; /* Reducir un poco el texto de la pregunta */
+  font-size: 0.9rem;
   color: #e0e7ff;
   line-height: 1.4;
-  margin-right: 20px; /* Espacio entre el texto y las opciones */
-  flex-grow: 1; /* Permitir que el texto ocupe el espacio disponible a la izquierda */
-  /* max-width: 60%; */ /* Opcional: Limitar el ancho del texto de la pregunta */
+  margin-right: 20px;
+  flex-grow: 1;
 }
 
 .optionsContainer {
   display: flex;
   align-items: center;
-  gap: 10px; /* Reducir aún más el espacio entre opciones si es necesario */
-  flex-shrink: 0; /* Evitar que el contenedor de opciones se encoja */
-  /* flex-wrap: wrap; */ /* Mantener por si acaso, aunque ahora deberían caber */
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .optionLabel {
@@ -130,7 +126,7 @@
   font-size: 0.9rem; 
   color: #c7d2fe;
   cursor: pointer;
-  padding: 3px; /* Reducir padding del label */
+  padding: 3px;
   white-space: nowrap; 
 }
 
@@ -143,9 +139,9 @@
 
 .radioCustom {
   display: inline-block;
-  width: 15px; /* Círculos un poco más pequeños */
+  width: 15px;
   height: 15px;
-  border: 1.5px solid #a78bfa; /* Borde un poco más delgado */
+  border: 1.5px solid #a78bfa;
   border-radius: 50%;
   position: relative;
   transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -173,7 +169,106 @@
 }
 
 .optionValueText { 
-  font-size: 0.8rem; 
-  color: #d1d5db; 
-  margin-left: 1px; /* Ajustar si es necesario */
+  font-size: 0.9rem;
+  color: #e0e7ff;
+  font-weight: 500;
+  margin-left: 1px;
+}
+
+.submitButton {
+  background-color: #d0006e;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 20px;
+  align-self: center;
+}
+.submitButton:hover {
+  background-color: #e6007a;
+  transform: translateY(-2px);
+}
+
+/* --- Estilos para el Modal de Resultado --- */
+.modalOverlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.88); 
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center; align-items: center; z-index: 5000; 
+  padding: 20px; box-sizing: border-box;
+}
+
+.modalContent {
+  background-color: #1a173a;
+  background-image: url('/assets/images/backgrounds/fondo3.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 35px; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  position: relative; 
+  width: 100%;
+  max-width: 450px;
+  color: white;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.modalContent::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(26, 23, 58, 0.8);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.modalTitle, .modalImage, .modalDescription, .modalScore, .closeButton {
+  position: relative;
+  z-index: 1;
+}
+
+.closeButton {
+  position: absolute; top: 10px; right: 15px; background: none;
+  border: none; color: #9ca3af; font-size: 2rem; 
+  font-weight: bold; cursor: pointer; line-height: 1;
+}
+.closeButton:hover { color: white; }
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #e0e7ff;
+  margin: 0 0 20px 0;
+}
+.modalTitle span {
+  font-weight: 700;
+  color: #fde047;
+  font-size: 2rem;
+  display: block;
+}
+
+.modalImage {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.modalDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  margin-bottom: 25px;
+}
+
+.modalScore {
+  font-size: 0.8rem;
+  color: #9ca3af;
 }

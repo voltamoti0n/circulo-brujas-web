@@ -90,7 +90,6 @@
   color: #212121;
   text-shadow: none;
 }
-/* Posicionamiento de texto basado en el prototipo de Issa López */
 .introBlock .textWrapper {
   max-width: 650px; 
   margin-left: auto;
@@ -109,8 +108,9 @@
   margin-right: 2vw;
 }
 
+/* --- SECCIÓN CORREGIDA --- */
 .impactBlock .textWrapper {
-  max-width: 650px; 
+  max-width: 59%; /* Reducimos el ancho para que quepa en el recuadro */
   margin-right: auto;
-  margin-left: 3vw;
+  margin-left: -4vw; /* Lo movemos más a la izquierda */
 }

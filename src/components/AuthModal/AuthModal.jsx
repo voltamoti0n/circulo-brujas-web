@@ -10,7 +10,6 @@ const AuthModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleOverlayClick = (e) => {
-    // Cerrar si se hace clic directamente en el overlay
     if (e.target === e.currentTarget) {
       handleClose();
     }
@@ -19,20 +18,16 @@ const AuthModal = ({ isOpen, onClose }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Registro:', { name, email });
-    // Aquí iría la lógica de envío real
     setSubmissionMessage(`¡Gracias por registrarte, ${name}! Hemos enviado un correo a ${email}.`);
     setIsSubmitted(true);
-    // No limpiar campos para que el mensaje tenga sentido
-    // setName('');
-    // setEmail('');
   };
 
   const handleClose = () => {
-    setIsSubmitted(false); // Resetear estado de envío
+    setIsSubmitted(false);
     setSubmissionMessage('');
-    setName(''); // Limpiar campos al cerrar
+    setName('');
     setEmail('');
-    onClose(); // Llamar a la función onClose pasada por props
+    onClose();
   };
 
   return (
@@ -82,13 +77,13 @@ const AuthModal = ({ isOpen, onClose }) => {
           <div className={styles.confirmationMessage}>
             <img src="/assets/images/backgrounds/logo.png" alt="Círculo de Brujas" className={styles.mainLogoConfirm} />
             <p>{submissionMessage}</p>
-            {/* <button onClick={handleClose} className={styles.submitButton}>Entendido</button> */}
           </div>
         )}
          <div className={styles.socialLinksFooter}>
-            <span>Ig @circulodebrujas</span>
-            <span>TikTok @circulodebrujas</span>
-            <span>Youtube Círculo D Brujas</span>
+            {/* SECCIÓN MODIFICADA CON ENLACES */}
+            <a href="https://www.instagram.com/circulodebrujas_/" target="_blank" rel="noopener noreferrer">Ig @circulodebrujas</a>
+            <a href="https://www.tiktok.com/@circulodbrujas?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok @circulodebrujas</a>
+            <a href="https://www.youtube.com/channel/UCmKu9W_AxmXDShXXv36wgDg" target="_blank" rel="noopener noreferrer">Youtube Círculo D Brujas</a>
         </div>
       </div>
     </div>

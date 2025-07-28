@@ -1,0 +1,33 @@
+/* src/components/SocialFooter/SocialFooter.module.css */
+
+.socialLink {
+  position: absolute; /* Permite posicionar cada enlace libremente */
+  bottom: 0; /* Lo posicionamos relativo a la parte inferior de su contenedor padre */
+  display: block;
+  text-indent: -9999px; /* Oculta el texto del enlace */
+  /* background-color: rgba(255, 0, 0, 0.3); Descomenta esto para ver el área del botón mientras lo ajustas */
+}
+
+/* --- AJUSTA ESTOS VALORES PARA POSICIONAR CADA BOTÓN --- */
+/* Los porcentajes de 'bottom' y 'left' son relativos al bloque del footer */
+
+.instagramLink {
+  bottom: 8%; /* Distancia desde la parte inferior del footer */
+  left: 21%;  /* Distancia desde la izquierda del footer */
+  width: 15%; /* Ancho del área clicable */
+  height: 5%; /* Alto del área clicable */
+}
+
+.tiktokLink {
+  bottom: 8%;
+  left: 42%;
+  width: 16%;
+  height: 5%;
+}
+
+.youtubeLink {
+  bottom: 8%;
+  left: 63%;
+  width: 17%;
+  height: 5%;
+}

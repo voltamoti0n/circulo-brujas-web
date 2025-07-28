@@ -24,7 +24,7 @@
   min-height: 112vh;
   align-items: flex-start;
   background-image: url('/assets/images/ana-tsuyeb/ana_1.jpg');
-  background-position: center 80%;
+  background-position: center 56%;
   padding-top: 15vh;
 }
 
@@ -45,8 +45,9 @@
 }
 
 .impactBlock {
-  align-items: flex-end;
-  padding-bottom: 8vh;
+  align-items: flex-start; /* Cambiado para alinear desde arriba */
+  padding-top: 15vh; /* Añadimos padding para bajar el texto */
+  background-position: center 50%;
   background-image: url('/assets/images/ana-tsuyeb/ana_5.jpg');
 }
 
@@ -65,7 +66,6 @@
   max-width: 800px;
   text-align: center;
   padding: 10px;
-  /* Se eliminan fondos o bordes de aquí para evitar recuadros */
 }
 
 .title {
@@ -116,8 +116,9 @@
   margin-left: auto;
 }
 
+/* --- SECCIÓN CORREGIDA --- */
 .impactBlock .textWrapper {
-    max-width: 550px;
-    margin-left: 53%;
-    margin-right: auto;
+    max-width: 58%; /* Reducimos el ancho para el recuadro verde */
+    margin-right: -1vw; /* Lo movemos desde la derecha */
+    margin-left: auto;
 }

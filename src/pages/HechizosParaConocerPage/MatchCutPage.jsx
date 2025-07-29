@@ -21,8 +21,10 @@ const MatchCutPage = () => {
           </video>
         </div>
 
-        {/* Componente de redes sociales posicionado al final del lienzo */}
-        <SocialFooter />
+        {/* Nuevo contenedor para posicionar el SocialFooter correctamente */}
+        <div className={styles.footerWrapper}>
+          <SocialFooter />
+        </div>
       </div>
     </div>
   );

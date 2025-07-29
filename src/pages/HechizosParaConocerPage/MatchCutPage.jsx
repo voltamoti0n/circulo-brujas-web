@@ -1,8 +1,31 @@
+// src/pages/HechizosParaConocerPage/MatchCutPage.jsx
 import React from 'react';
-import styles from './PostPage.module.css';
-const MatchCutPage = () => (
-  <div className={styles.pageContainer}>
-    <img src="/assets/images/hechizos/match-cut.jpg" alt="Match cut" className={styles.contentImage} />
-  </div>
-);
+import styles from './MatchCutPage.module.css';
+import SocialFooter from '../../components/SocialFooter/SocialFooter';
+
+const MatchCutPage = () => {
+  return (
+    <div className={styles.pageContainer}>
+      <div className={styles.contentCanvas}>
+        {/* Contenedor del video que ya posicionaste */}
+        <div className={styles.videoWrapper}>
+          <video
+            src="/assets/videos/matchcut.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.videoPlayer}
+          >
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+
+        {/* Componente de redes sociales posicionado al final del lienzo */}
+        <SocialFooter />
+      </div>
+    </div>
+  );
+};
+
 export default MatchCutPage;
